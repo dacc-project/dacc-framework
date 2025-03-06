@@ -1,0 +1,590 @@
+{
+  "Rank Classification": {
+    "0": [
+      {
+        "curve": "11.a1",
+        "rank": 0,
+        "period": 0.25384186085591065,
+        "regulator": 1,
+        "tamagawa_product": 1,
+        "tamagawa_factors": {
+          "11": 1
+        },
+        "torsion_order": 1,
+        "asi": 0,
+        "differential_ok": true,
+        "det_ok": true,
+        "elapsed_time": 0.027729272842407227,
+        "l_value": 0.25380438566207886,
+        "bsd_rhs": 0.25384186085591065,
+        "analytic_sha": 0.9998523679518208,
+        "sha_order": 1
+      },
+      {
+        "curve": "11.a2",
+        "rank": 0,
+        "period": 1.2692093042795531,
+        "regulator": 1,
+        "tamagawa_product": 5,
+        "tamagawa_factors": {
+          "11": 5
+        },
+        "torsion_order": 5,
+        "asi": 0,
+        "differential_ok": true,
+        "det_ok": true,
+        "elapsed_time": 0.0037899017333984375,
+        "l_value": 0.25380438566207886,
+        "bsd_rhs": 0.2538418608559106,
+        "analytic_sha": 0.999852367951821,
+        "sha_order": 1
+      },
+      {
+        "curve": "11.a3",
+        "rank": 0,
+        "period": 6.346046521397768,
+        "regulator": 1,
+        "tamagawa_product": 1,
+        "tamagawa_factors": {
+          "11": 1
+        },
+        "torsion_order": 5,
+        "asi": 0,
+        "differential_ok": true,
+        "det_ok": true,
+        "elapsed_time": 0.0028769969940185547,
+        "l_value": 0.25380438566207886,
+        "bsd_rhs": 0.2538418608559107,
+        "analytic_sha": 0.9998523679518205,
+        "sha_order": 1
+      },
+      {
+        "curve": "14.a1",
+        "rank": 0,
+        "period": 0.660447318688961,
+        "regulator": 1,
+        "tamagawa_product": 2,
+        "tamagawa_factors": {
+          "2": 1,
+          "7": 2
+        },
+        "torsion_order": 2,
+        "asi": 0,
+        "differential_ok": true,
+        "det_ok": true,
+        "elapsed_time": 0.01787590980529785,
+        "l_value": 0.3301936984062195,
+        "bsd_rhs": 0.3302236593444805,
+        "analytic_sha": 0.9999092707702395,
+        "sha_order": 1
+      },
+      {
+        "curve": "14.a2",
+        "rank": 0,
+        "period": 0.660447318688961,
+        "regulator": 1,
+        "tamagawa_product": 2,
+        "tamagawa_factors": {
+          "2": 2,
+          "7": 1
+        },
+        "torsion_order": 2,
+        "asi": 0,
+        "differential_ok": true,
+        "det_ok": true,
+        "elapsed_time": 0.00426793098449707,
+        "l_value": 0.3301936984062195,
+        "bsd_rhs": 0.3302236593444805,
+        "analytic_sha": 0.9999092707702395,
+        "sha_order": 1
+      }
+    ],
+    "1": [
+      {
+        "curve": "37.a1",
+        "rank": 1,
+        "period": 5.986917292463919,
+        "regulator": 0.05111140823996884,
+        "tamagawa_product": 1,
+        "tamagawa_factors": {
+          "37": 1
+        },
+        "torsion_order": 1,
+        "asi": 1,
+        "differential_ok": true,
+        "det_ok": true,
+        "elapsed_time": 0.00913095474243164
+      },
+      {
+        "curve": "43.a1",
+        "rank": 1,
+        "period": 5.468689529967582,
+        "regulator": 0.06281650708748765,
+        "tamagawa_product": 1,
+        "tamagawa_factors": {
+          "43": 1
+        },
+        "torsion_order": 1,
+        "asi": 1,
+        "differential_ok": true,
+        "det_ok": true,
+        "elapsed_time": 0.00416874885559082
+      },
+      {
+        "curve": "53.a1",
+        "rank": 1,
+        "period": 4.6876410488788816,
+        "regulator": 0.0929814846386543,
+        "tamagawa_product": 1,
+        "tamagawa_factors": {
+          "53": 1
+        },
+        "torsion_order": 1,
+        "asi": 1,
+        "differential_ok": true,
+        "det_ok": true,
+        "elapsed_time": 0.00457000732421875
+      },
+      {
+        "curve": "57.a1",
+        "rank": 1,
+        "period": 5.555504521372504,
+        "regulator": 0.03757459273682375,
+        "tamagawa_product": 2,
+        "tamagawa_factors": {
+          "3": 2,
+          "19": 1
+        },
+        "torsion_order": 1,
+        "asi": 1,
+        "differential_ok": true,
+        "det_ok": true,
+        "elapsed_time": 0.004719972610473633
+      },
+      {
+        "curve": "58.a1",
+        "rank": 1,
+        "period": 5.465591698886377,
+        "regulator": 0.04242030783992985,
+        "tamagawa_product": 2,
+        "tamagawa_factors": {
+          "2": 2,
+          "29": 1
+        },
+        "torsion_order": 1,
+        "asi": 1,
+        "differential_ok": true,
+        "det_ok": true,
+        "elapsed_time": 0.0054891109466552734
+      }
+    ],
+    "2": [
+      {
+        "curve": "389.a1",
+        "rank": 2,
+        "period": 4.980425121710109,
+        "regulator": 0.15246017794314373,
+        "tamagawa_product": 1,
+        "tamagawa_factors": {
+          "389": 1
+        },
+        "torsion_order": 1,
+        "asi": 2,
+        "differential_ok": true,
+        "det_ok": true,
+        "elapsed_time": 0.0045278072357177734
+      },
+      {
+        "curve": "433.a1",
+        "rank": 2,
+        "period": 4.214710192998485,
+        "regulator": 0.22469416341816678,
+        "tamagawa_product": 1,
+        "tamagawa_factors": {
+          "433": 1
+        },
+        "torsion_order": 1,
+        "asi": 2,
+        "differential_ok": true,
+        "det_ok": true,
+        "elapsed_time": 0.004313945770263672
+      },
+      {
+        "curve": "446.a1",
+        "rank": 2,
+        "period": 4.829734352857955,
+        "regulator": 0.09734309756945703,
+        "tamagawa_product": 2,
+        "tamagawa_factors": {
+          "2": 2,
+          "223": 1
+        },
+        "torsion_order": 1,
+        "asi": 2,
+        "differential_ok": true,
+        "det_ok": true,
+        "elapsed_time": 0.005917072296142578
+      },
+      {
+        "curve": "563.a1",
+        "rank": 2,
+        "period": 5.1752090225151415,
+        "regulator": 0.21922900351799546,
+        "tamagawa_product": 1,
+        "tamagawa_factors": {
+          "563": 1
+        },
+        "torsion_order": 1,
+        "asi": 2,
+        "differential_ok": true,
+        "det_ok": true,
+        "elapsed_time": 0.00511479377746582
+      },
+      {
+        "curve": "571.a1",
+        "rank": 2,
+        "period": 5.09531461973913,
+        "regulator": 0.1772531402620049,
+        "tamagawa_product": 1,
+        "tamagawa_factors": {
+          "571": 1
+        },
+        "torsion_order": 1,
+        "asi": 2,
+        "differential_ok": true,
+        "det_ok": true,
+        "elapsed_time": 0.0046100616455078125
+      }
+    ]
+  },
+  "Sha Properties": {
+    "Trivial Sha": [
+      {
+        "curve": "11.a1",
+        "rank": 0,
+        "period": 0.25384186085591065,
+        "regulator": 1,
+        "tamagawa_product": 1,
+        "tamagawa_factors": {
+          "11": 1
+        },
+        "torsion_order": 1,
+        "asi": 0,
+        "differential_ok": true,
+        "det_ok": true,
+        "elapsed_time": 0.0049288272857666016,
+        "l_value": 0.25380438566207886,
+        "bsd_rhs": 0.25384186085591065,
+        "analytic_sha": 0.9998523679518208,
+        "sha_order": 1
+      },
+      {
+        "curve": "11.a2",
+        "rank": 0,
+        "period": 1.2692093042795531,
+        "regulator": 1,
+        "tamagawa_product": 5,
+        "tamagawa_factors": {
+          "11": 5
+        },
+        "torsion_order": 5,
+        "asi": 0,
+        "differential_ok": true,
+        "det_ok": true,
+        "elapsed_time": 0.003160238265991211,
+        "l_value": 0.25380438566207886,
+        "bsd_rhs": 0.2538418608559106,
+        "analytic_sha": 0.999852367951821,
+        "sha_order": 1
+      },
+      {
+        "curve": "11.a3",
+        "rank": 0,
+        "period": 6.346046521397768,
+        "regulator": 1,
+        "tamagawa_product": 1,
+        "tamagawa_factors": {
+          "11": 1
+        },
+        "torsion_order": 5,
+        "asi": 0,
+        "differential_ok": true,
+        "det_ok": true,
+        "elapsed_time": 0.002974271774291992,
+        "l_value": 0.25380438566207886,
+        "bsd_rhs": 0.2538418608559107,
+        "analytic_sha": 0.9998523679518205,
+        "sha_order": 1
+      },
+      {
+        "curve": "14.a1",
+        "rank": 0,
+        "period": 0.660447318688961,
+        "regulator": 1,
+        "tamagawa_product": 2,
+        "tamagawa_factors": {
+          "2": 1,
+          "7": 2
+        },
+        "torsion_order": 2,
+        "asi": 0,
+        "differential_ok": true,
+        "det_ok": true,
+        "elapsed_time": 0.0008108615875244141,
+        "l_value": 0.3301936984062195,
+        "bsd_rhs": 0.3302236593444805,
+        "analytic_sha": 0.9999092707702395,
+        "sha_order": 1
+      }
+    ],
+    "Non-trivial Sha": [
+      {
+        "curve": "66.b1",
+        "rank": 0,
+        "period": 1.1021925301216091,
+        "regulator": 1,
+        "tamagawa_product": 1,
+        "tamagawa_factors": {
+          "2": 1,
+          "3": 1,
+          "11": 1
+        },
+        "torsion_order": 2,
+        "asi": 0,
+        "differential_ok": true,
+        "det_ok": true,
+        "elapsed_time": 0.0061299800872802734,
+        "l_value": 1.1021217703819275,
+        "bsd_rhs": 0.2755481325304023,
+        "analytic_sha": 3.9997432037044423,
+        "sha_order": 4
+      },
+      {
+        "curve": "102.c1",
+        "rank": 0,
+        "period": 0.36991948194861957,
+        "regulator": 1,
+        "tamagawa_product": 4,
+        "tamagawa_factors": {
+          "2": 1,
+          "3": 2,
+          "17": 2
+        },
+        "torsion_order": 2,
+        "asi": 0,
+        "differential_ok": true,
+        "det_ok": true,
+        "elapsed_time": 0.013117313385009766,
+        "l_value": 1.4796883463859558,
+        "bsd_rhs": 0.36991948194861957,
+        "analytic_sha": 4.000028164484397,
+        "sha_order": 4
+      },
+      {
+        "curve": "114.b1",
+        "rank": 0,
+        "period": 0.2775447463652535,
+        "regulator": 1,
+        "tamagawa_product": 5,
+        "tamagawa_factors": {
+          "2": 5,
+          "3": 1,
+          "19": 1
+        },
+        "torsion_order": 2,
+        "asi": 0,
+        "differential_ok": true,
+        "det_ok": true,
+        "elapsed_time": 0.006152153015136719,
+        "l_value": 1.3877795934677124,
+        "bsd_rhs": 0.34693093295656685,
+        "analytic_sha": 4.0001610166063,
+        "sha_order": 4
+      },
+      {
+        "curve": "120.b1",
+        "rank": 0,
+        "period": 0.6347471389816665,
+        "regulator": 1,
+        "tamagawa_product": 2,
+        "tamagawa_factors": {
+          "2": 1,
+          "3": 1,
+          "5": 2
+        },
+        "torsion_order": 2,
+        "asi": 0,
+        "differential_ok": true,
+        "det_ok": true,
+        "elapsed_time": 0.0048809051513671875,
+        "l_value": 1.2689855098724365,
+        "bsd_rhs": 0.31737356949083323,
+        "analytic_sha": 3.998396942468421,
+        "sha_order": 4
+      }
+    ]
+  },
+  "Tamagawa Properties": {
+    "Trivial Tamagawa": [
+      {
+        "curve": "11.a1",
+        "rank": 0,
+        "period": 0.25384186085591065,
+        "regulator": 1,
+        "tamagawa_product": 1,
+        "tamagawa_factors": {
+          "11": 1
+        },
+        "torsion_order": 1,
+        "asi": 0,
+        "differential_ok": true,
+        "det_ok": true,
+        "elapsed_time": 0.005188941955566406,
+        "l_value": 0.25380438566207886,
+        "bsd_rhs": 0.25384186085591065,
+        "analytic_sha": 0.9998523679518208,
+        "sha_order": 1
+      },
+      {
+        "curve": "11.a3",
+        "rank": 0,
+        "period": 6.346046521397768,
+        "regulator": 1,
+        "tamagawa_product": 1,
+        "tamagawa_factors": {
+          "11": 1
+        },
+        "torsion_order": 5,
+        "asi": 0,
+        "differential_ok": true,
+        "det_ok": true,
+        "elapsed_time": 0.0032367706298828125,
+        "l_value": 0.25380438566207886,
+        "bsd_rhs": 0.2538418608559107,
+        "analytic_sha": 0.9998523679518205,
+        "sha_order": 1
+      },
+      {
+        "curve": "15.a4",
+        "rank": 0,
+        "period": 5.6024121693304085,
+        "regulator": 1,
+        "tamagawa_product": 1,
+        "tamagawa_factors": {
+          "3": 1,
+          "5": 1
+        },
+        "torsion_order": 4,
+        "asi": 0,
+        "differential_ok": true,
+        "det_ok": true,
+        "elapsed_time": 0.004791736602783203,
+        "l_value": 0.3500092029571533,
+        "bsd_rhs": 0.35015076058315053,
+        "analytic_sha": 0.9995957237797757,
+        "sha_order": 1
+      },
+      {
+        "curve": "15.a7",
+        "rank": 0,
+        "period": 5.602412169330408,
+        "regulator": 1,
+        "tamagawa_product": 1,
+        "tamagawa_factors": {
+          "3": 1,
+          "5": 1
+        },
+        "torsion_order": 4,
+        "asi": 0,
+        "differential_ok": true,
+        "det_ok": true,
+        "elapsed_time": 0.0037689208984375,
+        "l_value": 0.3500092029571533,
+        "bsd_rhs": 0.3501507605831505,
+        "analytic_sha": 0.9995957237797759,
+        "sha_order": 1
+      }
+    ],
+    "Non-trivial Tamagawa": [
+      {
+        "curve": "11.a2",
+        "rank": 0,
+        "period": 1.2692093042795531,
+        "regulator": 1,
+        "tamagawa_product": 5,
+        "tamagawa_factors": {
+          "11": 5
+        },
+        "torsion_order": 5,
+        "asi": 0,
+        "differential_ok": true,
+        "det_ok": true,
+        "elapsed_time": 0.0033631324768066406,
+        "l_value": 0.25380438566207886,
+        "bsd_rhs": 0.2538418608559106,
+        "analytic_sha": 0.999852367951821,
+        "sha_order": 1
+      },
+      {
+        "curve": "14.a1",
+        "rank": 0,
+        "period": 0.660447318688961,
+        "regulator": 1,
+        "tamagawa_product": 2,
+        "tamagawa_factors": {
+          "2": 1,
+          "7": 2
+        },
+        "torsion_order": 2,
+        "asi": 0,
+        "differential_ok": true,
+        "det_ok": true,
+        "elapsed_time": 0.000743865966796875,
+        "l_value": 0.3301936984062195,
+        "bsd_rhs": 0.3302236593444805,
+        "analytic_sha": 0.9999092707702395,
+        "sha_order": 1
+      },
+      {
+        "curve": "14.a2",
+        "rank": 0,
+        "period": 0.660447318688961,
+        "regulator": 1,
+        "tamagawa_product": 2,
+        "tamagawa_factors": {
+          "2": 2,
+          "7": 1
+        },
+        "torsion_order": 2,
+        "asi": 0,
+        "differential_ok": true,
+        "det_ok": true,
+        "elapsed_time": 0.004177093505859375,
+        "l_value": 0.3301936984062195,
+        "bsd_rhs": 0.3302236593444805,
+        "analytic_sha": 0.9999092707702395,
+        "sha_order": 1
+      },
+      {
+        "curve": "14.a3",
+        "rank": 0,
+        "period": 1.9813419560668832,
+        "regulator": 1,
+        "tamagawa_product": 6,
+        "tamagawa_factors": {
+          "2": 1,
+          "7": 6
+        },
+        "torsion_order": 6,
+        "asi": 0,
+        "differential_ok": true,
+        "det_ok": true,
+        "elapsed_time": 0.0037338733673095703,
+        "l_value": 0.3301936984062195,
+        "bsd_rhs": 0.33022365934448056,
+        "analytic_sha": 0.9999092707702393,
+        "sha_order": 1
+      }
+    ]
+  }
+}

@@ -1,0 +1,10 @@
+SHA ORDER DISTRIBUTION
+============================================================
+
+Sha Order 1.0: 5356 curves
+Sha Order 4.0: 187 curves
+Sha Order 9.0: 42 curves
+Sha Order 16.0: 17 curves
+Sha Order 25.0: 13 curves
+Sha Order 49.0: 3 curves
+Sha Order 64.0: 2 curves

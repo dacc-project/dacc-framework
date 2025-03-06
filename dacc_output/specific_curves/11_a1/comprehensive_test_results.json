@@ -1,0 +1,18 @@
+{
+  "curve": "11.a1",
+  "rank": 0,
+  "period": "0.25384186085591065",
+  "regulator": null,
+  "tamagawa_product": 1,
+  "tamagawa_factors": {
+    "11": 1
+  },
+  "torsion_order": 1,
+  "asi": 0,
+  "det_ok": "True",
+  "elapsed_time": "0.0033822059631347656",
+  "l_value": "0.25380438566207886",
+  "bsd_rhs": "0.25384186085591065",
+  "analytic_sha": "0.9998523679518208",
+  "sha_order": 1
+}
