@@ -1,6 +1,36 @@
 from sage.all import *
 import json
 
+def sage_to_python(obj):
+    """Convert Sage types to Python native types for JSON serialization."""
+    if obj is None:
+        return None
+    elif hasattr(obj, 'is_integer') and obj.is_integer():
+        return int(obj)
+    elif hasattr(obj, 'is_real') and obj.is_real():
+        return float(obj)
+    elif isinstance(obj, complex):
+        return {"real": float(obj.real), "imag": float(obj.imag)}
+    elif isinstance(obj, dict):
+        return {sage_to_python(k): sage_to_python(v) for k, v in obj.items()}
+    elif isinstance(obj, (list, tuple)):
+        return [sage_to_python(x) for x in obj]
+    elif hasattr(obj, 'nrows') and hasattr(obj, 'ncols'):
+        # Handle matrices
+        return [[sage_to_python(obj[i,j]) for j in range(obj.ncols())] 
+                for i in range(obj.nrows())]
+    elif hasattr(obj, 'list'):
+        try:
+            # For matrices and similar objects with list() method
+            return [sage_to_python(x) for x in obj.list()]
+        except Exception:
+            pass
+    # Try to convert to string as a last resort
+    try:
+        return str(obj)
+    except Exception:
+        return repr(obj)
+
 def create_simplified_summary(json_file):
     try:
         with open(json_file, 'r') as f:
@@ -26,12 +56,14 @@ def create_simplified_summary(json_file):
                 if 'tamagawa' in result:
                     f.write(f"Tamagawa: {result['tamagawa']}\n")
                 
-                if 'l_value' in result:
+                if 'l_value' in result and 'bsd_prediction' in result:
                     f.write(f"L-value: {float(result['l_value']):.10f}\n")
                     f.write(f"BSD RHS: {float(result['bsd_prediction']):.10f}\n")
-                    f.write(f"Analytic Sha: {float(result['analytic_sha']):.10f}\n")
-                    sha_order = round(float(result['analytic_sha']))
-                    f.write(f"Predicted Sha Order: {sha_order}\n")
+                    
+                    if 'analytic_sha' in result:
+                        f.write(f"Analytic Sha: {float(result['analytic_sha']):.10f}\n")
+                        sha_order = round(float(result['analytic_sha']))
+                        f.write(f"Predicted Sha Order: {sha_order}\n")
                     
                 f.write("-" * 40 + "\n\n")
                 
@@ -64,7 +96,7 @@ def create_simplified_summary(json_file):
             f.write("2. Perfect rank verification: ASI(E) = rank(E) for all tested curves\n")
             f.write("3. Consistent height pairing matrix determinant: Equals the regulator for all curves of rank > 0\n")
             
-        print("Generated simplified summary at dacc_output/simplified_summary.txt")
+        print("Generated simplified summary at dacc_output/dacc_simplified_summary.txt")
     except Exception as e:
         print(f"Error creating summary: {e}")
         import traceback

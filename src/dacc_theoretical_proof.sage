@@ -1,8 +1,51 @@
 # dacc_theoretical_proof.sage - Theoretical components of the DACC proof with all curves
 
-from sage.all import EllipticCurve
+from sage.all import EllipticCurve, prod
 import os
 import json
+import mpmath
+
+# Helper function to convert Sage types to Python native types
+def sage_to_python(obj):
+    """Convert Sage types to Python native types for JSON serialization."""
+    if obj is None:
+        return None
+    elif hasattr(obj, 'is_integer') and obj.is_integer():
+        return int(obj)
+    elif hasattr(obj, 'is_real') and obj.is_real():
+        return float(obj)
+    elif isinstance(obj, complex):
+        return {"real": float(obj.real), "imag": float(obj.imag)}
+    elif isinstance(obj, mpmath.mpf):
+        return float(obj)
+    elif isinstance(obj, dict):
+        return {sage_to_python(k): sage_to_python(v) for k, v in obj.items()}
+    elif isinstance(obj, (list, tuple)):
+        return [sage_to_python(x) for x in obj]
+    elif hasattr(obj, 'nrows') and hasattr(obj, 'ncols'):
+        # Handle matrices
+        return [[sage_to_python(obj[i,j]) for j in range(obj.ncols())] 
+                for i in range(obj.nrows())]
+    elif hasattr(obj, 'list'):
+        try:
+            # For matrices and similar objects with list() method
+            return [sage_to_python(x) for x in obj.list()]
+        except Exception:
+            pass
+    # Try to convert to string as a last resort
+    try:
+        return str(obj)
+    except Exception:
+        return repr(obj)
+
+def apply_sage_to_python(result):
+    """Apply sage_to_python conversion to all elements in a result dict."""
+    if isinstance(result, dict):
+        return {k: apply_sage_to_python(v) for k, v in result.items()}
+    elif isinstance(result, list):
+        return [apply_sage_to_python(x) for x in result]
+    else:
+        return sage_to_python(result)
 
 def generate_theoretical_proof():
     """Generate the theoretical proof components of DACC, including examples from all available curves."""
@@ -379,9 +422,9 @@ def get_representative_curves():
         ],
         "rank_examples": {
             1: [{"curve": "37a1", "regulator": 0.051}],
-            2: [{"curve": "389a1", "regulator": 0.759}],
-            3: [{"curve": "5077a1", "regulator": 1.732}],
-            4: [{"curve": "234446a1", "regulator": 3.5}]
+            2: [{"curve": "389a1", "regulator": 0.152}],
+            3: [{"curve": "5077a1", "regulator": 0.417}],
+            4: [{"curve": "234446a1", "regulator": 1.504}]
         }
     }
     

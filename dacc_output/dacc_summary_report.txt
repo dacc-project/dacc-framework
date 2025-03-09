@@ -3,10 +3,10 @@ DACC FRAMEWORK COMPREHENSIVE TEST RESULTS
 
 SUMMARY STATISTICS
 ------------------------------------------------------------
-Total curves tested: 22
+Total curves tested: 19
 
 Distribution by rank:
-Rank 0: 12 curves
+Rank 0: 9 curves
 Rank 1: 5 curves
 Rank 2: 5 curves
 
@@ -123,45 +123,9 @@ ASI = 0 (should equal rank = 0)
 Differential vanishing test: PASS
 Determinant formula test: PASS
 
-Curve: 15.a4
-Period: 5.6024121693
-Tamagawa product: 1
-Torsion order: 4
-L(E,1): 0.3500092030
-BSD RHS (without Sha): 0.3501507606
-Analytic Sha: 0.9995957238
-Rounded Sha order: 1
-ASI = 0 (should equal rank = 0)
-Differential vanishing test: PASS
-Determinant formula test: PASS
-
-Curve: 15.a7
-Period: 5.6024121693
-Tamagawa product: 1
-Torsion order: 4
-L(E,1): 0.3500092030
-BSD RHS (without Sha): 0.3501507606
-Analytic Sha: 0.9995957238
-Rounded Sha order: 1
-ASI = 0 (should equal rank = 0)
-Differential vanishing test: PASS
-Determinant formula test: PASS
-
-Curve: 14.a3
-Period: 1.9813419561
-Tamagawa product: 6
-Torsion order: 6
-L(E,1): 0.3301936984
-BSD RHS (without Sha): 0.3302236593
-Analytic Sha: 0.9999092708
-Rounded Sha order: 1
-ASI = 0 (should equal rank = 0)
-Differential vanishing test: PASS
-Determinant formula test: PASS
-
 Rank 0 Summary:
-Determinant test success rate: 12/12 (100.0%)
-Determinant test success rate: 12/12 (100.0%)
+Differential test success rate: 9/9 (100.0%)
+Determinant test success rate: 9/9 (100.0%)
 
 RANK 1 RESULTS:
 
@@ -211,7 +175,7 @@ Differential vanishing test: PASS
 Determinant formula test: PASS
 
 Rank 1 Summary:
-Determinant test success rate: 5/5 (100.0%)
+Differential test success rate: 5/5 (100.0%)
 Determinant test success rate: 5/5 (100.0%)
 
 RANK 2 RESULTS:
@@ -262,7 +226,7 @@ Differential vanishing test: PASS
 Determinant formula test: PASS
 
 Rank 2 Summary:
-Determinant test success rate: 5/5 (100.0%)
+Differential test success rate: 5/5 (100.0%)
 Determinant test success rate: 5/5 (100.0%)
 
 CONCLUSION
