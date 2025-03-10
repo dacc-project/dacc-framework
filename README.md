@@ -18,7 +18,7 @@ The **DACC framework** offers a twofold interpretation of the BSD conjecture:
     \frac{L^{(r)}(E,1)}{r!} = \frac{\Omega_E \cdot R_E \cdot \prod_{p} c_p}{\text{\#Sha}(E)}
     ```
     
-The method constructs a derived sheaf by combining local arithmetic data from each place of ```math\(\mathbb{Q}\)```. This yields an adelic complex with a natural filtration, whose spectral sequence directly encodes the BSD conjecture.
+The method constructs a derived sheaf by combining local arithmetic data from each place of $\(\mathbb{Q}\)$. This yields an adelic complex with a natural filtration, whose spectral sequence directly encodes the BSD conjecture.
 
 ## Key Features
 
