@@ -3,38 +3,17 @@
 
 Welcome to the **DACC** repository, which implements the Derived Adelic Cohomology Conjecture—a novel framework offering a cohomological perspective on the Birch and Swinnerton-Dyer (BSD) conjecture for elliptic curves.
 
-## Table of Contents
-- [Overview](#overview)
-- [Key Features](#key-features)
-- [Repository Structure](#repository-structure)
-- [Installation Requirements](#installation-requirements)
-  - [Core Requirements](#core-requirements)
-  - [Optional Dependencies](#optional-dependencies)
-- [Usage](#usage)
-  - [Running the Complete Framework](#running-the-complete-framework)
-  - [Analyzing a Specific Curve](#analyzing-a-specific-curve)
-  - [Running Individual Components](#running-individual-components)
-- [Examples](#examples)
-  - [Basic Analysis](#basic-analysis)
-  - [Customized Testing](#customized-testing)
-- [Citing this Work](#citing-this-work)
-- [License](#license)
-
 ## Overview
 
 The **DACC framework** offers a twofold interpretation of the BSD conjecture:
 
 1. **Rank Equality:**  
    The order of vanishing of the L-function equals the elliptic curve's rank:  
-   \[
-   \text{ASI}(E) = \text{rank}(E) = \text{ord}_{s=1}L(s, E)
-   \]
+   $$\text{ASI}(E) = \text{rank}(E) = \text{ord}_{s=1}L(s, E)$$
 
 2. **Leading Coefficient Formula:**  
    The leading coefficient of the L-series is given by:  
-   \[
-   \frac{L^{(r)}(E,1)}{r!} = \frac{\Omega_E \cdot R_E \cdot \prod_{p} c_p}{\text{\#Sha}(E)}
-   \]
+   $$\frac{L^{(r)}(E,1)}{r!} = \frac{\Omega_E \cdot R_E \cdot \prod_{p} c_p}{\text{\#Sha}(E)}$$
 
 The method constructs a derived sheaf by combining local arithmetic data from each place of \(\mathbb{Q}\). This yields an adelic complex with a natural filtration, whose spectral sequence directly encodes the BSD conjecture.
 
@@ -47,16 +26,16 @@ The method constructs a derived sheaf by combining local arithmetic data from ea
 
 ## Repository Structure
 
-- \`dacc_master.sage\`: Main script to orchestrate the framework.
-- \`dacc_curve.sage\`: Analyzes individual elliptic curves.
-- \`dacc_utils.sage\`: Utility functions for curve validation and LMFDB access.
-- \`dacc_config.json\`: Configuration file for test curve families.
-- \`dacc_comprehensive_proof.sage\`: Integrates all proof components.
-- \`dacc_derived_determinant.sage\`: Implements determinant theory.
-- \`dacc_spectral_vanishing.sage\`: Handles differential vanishing theorems.
-- \`dacc_theoretical_proof.sage\`: Generates theoretical proof documents.
-- \`dacc_comprehensive_test.sage\`: Runs comprehensive tests.
-- \`dacc_simple_summary.sage\`: Generates simplified summary reports.
+- `dacc_master.sage`: Main script to orchestrate the framework.
+- `dacc_curve.sage`: Analyzes individual elliptic curves.
+- `dacc_utils.sage`: Utility functions for curve validation and LMFDB access.
+- `dacc_config.json`: Configuration file for test curve families.
+- `dacc_comprehensive_proof.sage`: Integrates all proof components.
+- `dacc_derived_determinant.sage`: Implements determinant theory.
+- `dacc_spectral_vanishing.sage`: Handles differential vanishing theorems.
+- `dacc_theoretical_proof.sage`: Generates theoretical proof documents.
+- `dacc_comprehensive_test.sage`: Runs comprehensive tests.
+- `dacc_simple_summary.sage`: Generates simplified summary reports.
 
 ## Installation Requirements
 
@@ -102,13 +81,13 @@ sage dacc_curve.sage --curve=37.a1 --comprehensive  # Includes comprehensive tes
 ### Running Individual Components
 
 - **Determinant Theory Tests:**  
-  \`sage dacc_derived_determinant.sage\`
+  `sage dacc_derived_determinant.sage`
 
 - **Generate Theoretical Proof Document:**  
-  \`sage dacc_theoretical_proof.sage\`
+  `sage dacc_theoretical_proof.sage`
 
 - **Run Comprehensive Tests with Visualizations:**  
-  \`sage dacc_comprehensive_test.sage\`
+  `sage dacc_comprehensive_test.sage`
 
 ## Examples
 
@@ -124,7 +103,7 @@ sage dacc_curve.sage --curve=389.a1 --comprehensive
 
 ### Customized Testing
 
-Customize the test families by modifying the \`dacc_config.json\` file.
+Customize the test families by modifying the `dacc_config.json` file.
 
 ## Citing this Work
 
