@@ -1,4 +1,3 @@
-```markdown
 # Derived Adelic Cohomology Conjecture (DACC)
 
 Welcome to the **DACC** repository, which implements the Derived Adelic Cohomology Conjecture—a novel framework offering a cohomological perspective on the Birch and Swinnerton-Dyer (BSD) conjecture for elliptic curves.
