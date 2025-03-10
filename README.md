@@ -23,25 +23,25 @@ Our approach constructs a derived sheaf by gluing local arithmetic data at each 
 
 ## Repository Structure
 
-- `dacc_master.sage`: Main orchestrator script for running all components
-- `dacc_curve.sage`: Analysis of individual elliptic curves
-- `dacc_utils.sage`: Utility functions for curve validation and LMFDB access
-- `dacc_config.json`: Configuration file with test curve families
-- `dacc_comprehensive_proof.sage`: Integration of all proof components
-- `dacc_derived_determinant.sage`: Implementation of determinant theory
-- `dacc_spectral_vanishing.sage`: Implementation of differential vanishing theorems
-- `dacc_theoretical_proof.sage`: Generation of theoretical proof documents
-- `dacc_comprehensive_test.sage`: Comprehensive testing framework
-- `dacc_simple_summary.sage`: Generation of simplified summary reports
+- `dacc_master.sage`: Main orchestrator script for running all components  
+- `dacc_curve.sage`: Analysis of individual elliptic curves  
+- `dacc_utils.sage`: Utility functions for curve validation and LMFDB access  
+- `dacc_config.json`: Configuration file with test curve families  
+- `dacc_comprehensive_proof.sage`: Integration of all proof components  
+- `dacc_derived_determinant.sage`: Implementation of determinant theory  
+- `dacc_spectral_vanishing.sage`: Implementation of differential vanishing theorems  
+- `dacc_theoretical_proof.sage`: Generation of theoretical proof documents  
+- `dacc_comprehensive_test.sage`: Comprehensive testing framework  
+- `dacc_simple_summary.sage`: Generation of simplified summary reports  
 
 ## Installation Requirements
 
 ### Core Requirements
 
-- **SageMath**: Version 10.4 or later
-- **Python**: 3.8 or later (included with SageMath)
-- **NumPy**: For numerical computations (included with SageMath)
-- **Matplotlib**: For visualizations (included with SageMath)
+- **SageMath**: Version 10.4 or later  
+- **Python**: 3.8 or later (included with SageMath)  
+- **NumPy**: For numerical computations (included with SageMath)  
+- **Matplotlib**: For visualizations (included with SageMath)  
 
 ### Optional Dependencies
 
@@ -50,9 +50,9 @@ Our approach constructs a derived sheaf by gluing local arithmetic data at each 
 sage -pip install plotly pandas scipy adjustText
 ```
 
-- Plotly & Pandas: For interactive visualizations
-- SciPy: For advanced statistical analysis
-- adjustText: For improved label positioning in plots
+- Plotly & Pandas: For interactive visualizations  
+- SciPy: For advanced statistical analysis  
+- adjustText: For improved label positioning in plots  
 
 ## Usage
 
@@ -75,18 +75,19 @@ sage dacc_curve.sage --curve=37.a1 --comprehensive  # With comprehensive tests
 
 ### Running Individual Components
 
-# Run the determinant theory tests
-sage dacc_derived_determinant.sage
+# Run the determinant theory tests  
+sage dacc_derived_determinant.sage  
 
-# Generate theoretical proof document
-sage dacc_theoretical_proof.sage
+# Generate theoretical proof document  
+sage dacc_theoretical_proof.sage  
 
-# Run comprehensive tests with visualizations
-sage dacc_comprehensive_test.sage
+# Run comprehensive tests with visualizations  
+sage dacc_comprehensive_test.sage  
 
 ## Examples
 
 ### Basic Analysis
+
 ```
 # Analyze a rank 0 curve with non-trivial Sha
 sage dacc_curve.sage --curve=571.a1
@@ -97,7 +98,7 @@ sage dacc_curve.sage --curve=389.a1 --comprehensive
 
 ### Customized Testing
 
-You can modify dacc_config.json to specify custom test families of curves.
+You can modify \`dacc_config.json\` to specify custom test families of curves.
 
 ## Citing this Work
 
