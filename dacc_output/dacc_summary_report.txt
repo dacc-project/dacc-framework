@@ -3,11 +3,11 @@ DACC FRAMEWORK COMPREHENSIVE TEST RESULTS
 
 SUMMARY STATISTICS
 ------------------------------------------------------------
-Total curves tested: 19
+Total curves tested: 28
 
 Distribution by rank:
-Rank 0: 9 curves
-Rank 1: 5 curves
+Rank 0: 15 curves
+Rank 1: 8 curves
 Rank 2: 5 curves
 
 DETAILED RESULTS BY RANK
@@ -123,9 +123,81 @@ ASI = 0 (should equal rank = 0)
 Differential vanishing test: PASS
 Determinant formula test: PASS
 
+Curve: 990.e3
+Period: 0.7445522779
+Tamagawa product: 48
+Torsion order: 6
+L(E,1): 0.9933571070
+BSD RHS (without Sha): 0.9927363706
+Analytic Sha: 1.0006252782
+Rounded Sha order: 1
+ASI = 0 (should equal rank = 0)
+Differential vanishing test: PASS
+Determinant formula test: PASS
+
+Curve: 990.e4
+Period: 0.2481840926
+Tamagawa product: 16
+Torsion order: 2
+L(E,1): 0.9933571070
+BSD RHS (without Sha): 0.9927363706
+Analytic Sha: 1.0006252782
+Rounded Sha order: 1
+ASI = 0 (should equal rank = 0)
+Differential vanishing test: PASS
+Determinant formula test: PASS
+
+Curve: 990.f1
+Period: 1.2550458447
+Tamagawa product: 1
+Torsion order: 1
+L(E,1): 1.2549815774
+BSD RHS (without Sha): 1.2550458447
+Analytic Sha: 0.9999487929
+Rounded Sha order: 1
+ASI = 0 (should equal rank = 0)
+Differential vanishing test: PASS
+Determinant formula test: PASS
+
+Curve: 15.a4
+Period: 5.6024121693
+Tamagawa product: 1
+Torsion order: 4
+L(E,1): 0.3500092030
+BSD RHS (without Sha): 0.3501507606
+Analytic Sha: 0.9995957238
+Rounded Sha order: 1
+ASI = 0 (should equal rank = 0)
+Differential vanishing test: PASS
+Determinant formula test: PASS
+
+Curve: 15.a7
+Period: 5.6024121693
+Tamagawa product: 1
+Torsion order: 4
+L(E,1): 0.3500092030
+BSD RHS (without Sha): 0.3501507606
+Analytic Sha: 0.9995957238
+Rounded Sha order: 1
+ASI = 0 (should equal rank = 0)
+Differential vanishing test: PASS
+Determinant formula test: PASS
+
+Curve: 14.a3
+Period: 1.9813419561
+Tamagawa product: 6
+Torsion order: 6
+L(E,1): 0.3301936984
+BSD RHS (without Sha): 0.3302236593
+Analytic Sha: 0.9999092708
+Rounded Sha order: 1
+ASI = 0 (should equal rank = 0)
+Differential vanishing test: PASS
+Determinant formula test: PASS
+
 Rank 0 Summary:
-Differential test success rate: 9/9 (100.0%)
-Determinant test success rate: 9/9 (100.0%)
+Differential test success rate: 15/15 (100.0%)
+Determinant test success rate: 15/15 (100.0%)
 
 RANK 1 RESULTS:
 
@@ -134,6 +206,7 @@ Period: 5.9869172925
 Regulator: 0.0511114082
 Tamagawa product: 1
 Torsion order: 1
+BSD RHS (without Sha): 0.3059997738
 ASI = 1 (should equal rank = 1)
 Differential vanishing test: PASS
 Determinant formula test: PASS
@@ -143,6 +216,7 @@ Period: 5.4686895300
 Regulator: 0.0628165071
 Tamagawa product: 1
 Torsion order: 1
+BSD RHS (without Sha): 0.3435239746
 ASI = 1 (should equal rank = 1)
 Differential vanishing test: PASS
 Determinant formula test: PASS
@@ -152,6 +226,7 @@ Period: 4.6876410489
 Regulator: 0.0929814846
 Tamagawa product: 1
 Torsion order: 1
+BSD RHS (without Sha): 0.4358638242
 ASI = 1 (should equal rank = 1)
 Differential vanishing test: PASS
 Determinant formula test: PASS
@@ -161,6 +236,7 @@ Period: 5.5555045214
 Regulator: 0.0375745927
 Tamagawa product: 2
 Torsion order: 1
+BSD RHS (without Sha): 0.4174916397
 ASI = 1 (should equal rank = 1)
 Differential vanishing test: PASS
 Determinant formula test: PASS
@@ -170,13 +246,44 @@ Period: 5.4655916989
 Regulator: 0.0424203078
 Tamagawa product: 2
 Torsion order: 1
+BSD RHS (without Sha): 0.4637041648
+ASI = 1 (should equal rank = 1)
+Differential vanishing test: PASS
+Determinant formula test: PASS
+
+Curve: 1800.n1
+Period: 0.6230055175
+Regulator: 1.1782911821
+Tamagawa product: 16
+Torsion order: 2
+BSD RHS (without Sha): 11.7453105235
+ASI = 1 (should equal rank = 1)
+Differential vanishing test: PASS
+Determinant formula test: PASS
+
+Curve: 1800.m6
+Period: 0.4352588700
+Regulator: 3.3318606955
+Tamagawa product: 8
+Torsion order: 2
+BSD RHS (without Sha): 11.6017753705
+ASI = 1 (should equal rank = 1)
+Differential vanishing test: PASS
+Determinant formula test: PASS
+
+Curve: 1800.m5
+Period: 0.8705177400
+Regulator: 1.6659303477
+Tamagawa product: 8
+Torsion order: 2
+BSD RHS (without Sha): 11.6017753705
 ASI = 1 (should equal rank = 1)
 Differential vanishing test: PASS
 Determinant formula test: PASS
 
 Rank 1 Summary:
-Differential test success rate: 5/5 (100.0%)
-Determinant test success rate: 5/5 (100.0%)
+Differential test success rate: 8/8 (100.0%)
+Determinant test success rate: 8/8 (100.0%)
 
 RANK 2 RESULTS:
 
@@ -185,6 +292,7 @@ Period: 4.9804251217
 Regulator: 0.1524601779
 Tamagawa product: 1
 Torsion order: 1
+BSD RHS (without Sha): 0.7593165003
 ASI = 2 (should equal rank = 2)
 Differential vanishing test: PASS
 Determinant formula test: PASS
@@ -194,6 +302,7 @@ Period: 4.2147101930
 Regulator: 0.2246941634
 Tamagawa product: 1
 Torsion order: 1
+BSD RHS (without Sha): 0.9470207809
 ASI = 2 (should equal rank = 2)
 Differential vanishing test: PASS
 Determinant formula test: PASS
@@ -203,6 +312,7 @@ Period: 4.8297343529
 Regulator: 0.0973430976
 Tamagawa product: 2
 Torsion order: 1
+BSD RHS (without Sha): 0.9402826047
 ASI = 2 (should equal rank = 2)
 Differential vanishing test: PASS
 Determinant formula test: PASS
@@ -212,6 +322,7 @@ Period: 5.1752090225
 Regulator: 0.2192290035
 Tamagawa product: 1
 Torsion order: 1
+BSD RHS (without Sha): 1.1345559170
 ASI = 2 (should equal rank = 2)
 Differential vanishing test: PASS
 Determinant formula test: PASS
@@ -221,6 +332,7 @@ Period: 5.0953146197
 Regulator: 0.1772531403
 Tamagawa product: 1
 Torsion order: 1
+BSD RHS (without Sha): 0.9031605170
 ASI = 2 (should equal rank = 2)
 Differential vanishing test: PASS
 Determinant formula test: PASS

@@ -44,7 +44,6 @@ Date:
     March 2025
 """
 
-
 import warnings
 
 # Suppress the specific urllib3 OpenSSL warning
@@ -62,6 +61,8 @@ from sage.all import EllipticCurve, prod, RR, matrix, vector, QQ, ZZ, binomial
 import matplotlib
 matplotlib.use('Agg')  # Non-interactive backend
 import matplotlib.pyplot as plt
+
+load("dacc_utils.sage")  # Load utility functions
 
 # Helper function to convert Sage types to Python native types
 def sage_to_python(obj):
@@ -1373,45 +1374,19 @@ def analyze_specific_curve(curve_label, debug=False, comprehensive=False):
     # Save safe_label at the beginning to avoid reference errors
     safe_label = curve_label.replace('.', '_')
     
-    # Get the curve data
-    curve_data = get_curve_data(curve_label, debug)
+    # Load curve from LMFDB with proper validation
+    E, valid_label, curve_data = get_curve_from_lmfdb(curve_label, debug=debug)
     
-    if not curve_data:
-        print(f"Could not retrieve data for curve {curve_label}")
+    if E is None:
+        print("Analysis cannot continue without valid LMFDB data.")
+        return
+    
+    # Extract rank from LMFDB data or compute if necessary
+    rank = curve_data.get('rank')
+    if rank is None:
+        print("Computing rank (this may take a moment)...")
+        rank = E.rank()
         
-        # Try a direct approach with SageMath
-        try:
-            print("Trying to load curve directly with SageMath...")
-            E = EllipticCurve(curve_label)
-            print(f"Successfully loaded curve using SageMath")
-            rank = E.rank()
-            print(f"Computed rank: {rank}")
-        except Exception as e:
-            print(f"Could not load curve with SageMath either: {e}")
-            
-            # For specific known high-rank curves, provide hardcoded data
-            if curve_label == "177858971.a1":
-                print("Using hardcoded data for this specific curve")
-                E = EllipticCurve([0, 0, 1, -679, 6840])
-                rank = 5
-            else:
-                print("No fallback data available for this curve")
-                return
-    else:
-        # Create the elliptic curve from the retrieved data
-        ainvs = curve_data.get('ainvs')
-        if isinstance(ainvs, list):
-            E = EllipticCurve(ainvs)
-        else:
-            print(f"Invalid ainvs format: {ainvs}")
-            return
-        
-        # Get the rank
-        rank = curve_data.get('rank')
-        if rank is None:
-            print("Computing rank (this may take a moment)...")
-            rank = E.rank()
-            
     print(f"Curve equation: {E}")
     print(f"Conductor: {E.conductor()}")
     print(f"Rank: {rank}")

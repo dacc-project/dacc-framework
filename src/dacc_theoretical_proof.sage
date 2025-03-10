@@ -5,6 +5,8 @@ import os
 import json
 import mpmath
 
+load("dacc_utils.sage")  # Load utility functions
+
 # Helper function to convert Sage types to Python native types
 def sage_to_python(obj):
     """Convert Sage types to Python native types for JSON serialization."""
@@ -410,35 +412,49 @@ a path toward proving the general BSD conjecture.
         print("Note: PDF compilation failed. You can manually compile the LaTeX file if needed.")
 
 def get_representative_curves():
-    """Get representative curves from previous analysis for examples in the proof"""
+    """
+    Get representative curves from configuration or previous analysis for examples in the proof.
+    Prioritizes data from previous analysis results if available, otherwise uses configuration.
+    """
     results_file = "dacc_output/dacc_results.json"
     
-    # Default examples in case we can't load previous results
-    default_examples = {
-        "sha_examples": [
-            {"curve": "11a1", "l_value": 0.254, "bsd_prediction": 0.254, "analytic_sha": 1},
-            {"curve": "571a1", "l_value": 1.729, "bsd_prediction": 0.432, "analytic_sha": 4},
-            {"curve": "681b1", "l_value": 1.844, "bsd_prediction": 0.205, "analytic_sha": 9}
-        ],
-        "rank_examples": {
-            1: [{"curve": "37a1", "regulator": 0.051}],
-            2: [{"curve": "389a1", "regulator": 0.152}],
-            3: [{"curve": "5077a1", "regulator": 0.417}],
-            4: [{"curve": "234446a1", "regulator": 1.504}]
-        }
-    }
+    # Get default examples from the configuration file
+    config_examples = get_default_examples()
     
+    # If we're using config examples, convert rank keys from strings to integers
+    if "rank_examples" in config_examples:
+        # Create a new dictionary with integer keys
+        integer_rank_examples = {}
+        for rank_str, examples in config_examples["rank_examples"].items():
+            # Convert string rank to integer
+            try:
+                rank_int = int(rank_str)
+                integer_rank_examples[rank_int] = examples
+            except ValueError:
+                # Skip any non-integer keys
+                print(f"Warning: Skipping non-integer rank key '{rank_str}' in config")
+                
+        # Replace the original with the integer-keyed dictionary
+        config_examples["rank_examples"] = integer_rank_examples
+        
     if os.path.exists(results_file):
         try:
             with open(results_file, 'r') as f:
                 all_results = json.load(f)
-            
+                
             # Extract examples from results
             sha_examples = []
             rank_examples = {}
             
             # Find Sha examples
             for result in all_results:
+                # Fix the curve label format using our utility function
+                if 'curve' in result:
+                    if not is_valid_lmfdb_label(result['curve']):
+                        suggested = format_suggested_label(result['curve'])
+                        if suggested:
+                            result['curve'] = suggested
+                            
                 if 'analytic_sha' in result and 'l_value' in result and 'bsd_prediction' in result:
                     sha = round(float(result['analytic_sha']))
                     # Only collect rank 0 curves for Sha examples
@@ -446,16 +462,24 @@ def get_representative_curves():
                         sha_examples.append(result)
                         if len(sha_examples) >= 3:  # Limit to 3 examples
                             break
-            
-            # Find rank examples
+                    
+            # Find rank examples - ensure ranks are integers
             for result in all_results:
-                rank = result['rank']
+                # Fix the curve label format using our utility function
+                if 'curve' in result:
+                    if not is_valid_lmfdb_label(result['curve']):
+                        suggested = format_suggested_label(result['curve'])
+                        if suggested:
+                            result['curve'] = suggested
+                            
+                # Ensure rank is an integer
+                rank = int(result['rank'])
                 if rank not in rank_examples:
                     rank_examples[rank] = []
-                
+                    
                 if len(rank_examples[rank]) < 3:  # Limit to 3 examples per rank
                     rank_examples[rank].append(result)
-            
+                
             if sha_examples and rank_examples:
                 print(f"Loaded {len(sha_examples)} Sha examples and rank examples for {len(rank_examples)} different ranks.")
                 return {
@@ -463,16 +487,17 @@ def get_representative_curves():
                     "rank_examples": rank_examples
                 }
             else:
-                print("Could not find enough examples in results, using defaults")
-                return default_examples
-                
+                print("Could not find enough examples in results, using configuration examples")
+                return config_examples
+            
         except Exception as e:
-            print(f"Error loading curve examples: {e}")
-            return default_examples
+            print(f"Error loading curve examples from results: {e}")
+            print("Using configuration examples instead")
+            return config_examples
     else:
-        print("No previous analysis results found, using default examples")
-        return default_examples
-
+        print("No previous analysis results found, using configuration examples")
+        return config_examples
+    
 if __name__ == "__main__":
     print("GENERATING THEORETICAL PROOF FOR DACC FRAMEWORK")
     print("=" * 80)

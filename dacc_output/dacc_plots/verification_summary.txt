@@ -1,0 +1,45 @@
+DACC DETERMINANT FORMULA VERIFICATION SUMMARY
+==================================================
+
+Overall success rate: 100.0% (28/28)
+
+Success rate by rank:
+Rank 0: 100.0% (15/15)
+Rank 1: 100.0% (8/8)
+Rank 2: 100.0% (5/5)
+
+Successfully verified curves:
+
+Rank 0:
+  - 11.a1
+  - 11.a2
+  - 11.a3
+  - 14.a1
+  - 14.a2
+  - 66.b1
+  - 102.c1
+  - 114.b1
+  - 120.b1
+  - 990.e3
+  - 990.e4
+  - 990.f1
+  - 15.a4
+  - 15.a7
+  - 14.a3
+
+Rank 1:
+  - 37.a1
+  - 43.a1
+  - 53.a1
+  - 57.a1
+  - 58.a1
+  - 1800.n1
+  - 1800.m6
+  - 1800.m5
+
+Rank 2:
+  - 389.a1
+  - 433.a1
+  - 446.a1
+  - 563.a1
+  - 571.a1

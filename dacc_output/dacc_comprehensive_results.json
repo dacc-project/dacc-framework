@@ -14,7 +14,7 @@
         "asi": "0",
         "differential_ok": "True",
         "det_ok": "True",
-        "elapsed_time": "0.02847909927368164",
+        "elapsed_time": "0.02778482437133789",
         "l_value": "0.25380438566207886",
         "bsd_rhs": "0.25384186085591065",
         "analytic_sha": "0.9998523679518208",
@@ -33,7 +33,7 @@
         "asi": "0",
         "differential_ok": "True",
         "det_ok": "True",
-        "elapsed_time": "0.004197120666503906",
+        "elapsed_time": "0.0038290023803710938",
         "l_value": "0.25380438566207886",
         "bsd_rhs": "0.2538418608559106",
         "analytic_sha": "0.999852367951821",
@@ -52,7 +52,7 @@
         "asi": "0",
         "differential_ok": "True",
         "det_ok": "True",
-        "elapsed_time": "0.0030448436737060547",
+        "elapsed_time": "0.0036170482635498047",
         "l_value": "0.25380438566207886",
         "bsd_rhs": "0.2538418608559107",
         "analytic_sha": "0.9998523679518205",
@@ -72,7 +72,7 @@
         "asi": "0",
         "differential_ok": "True",
         "det_ok": "True",
-        "elapsed_time": "0.015223979949951172",
+        "elapsed_time": "0.014812946319580078",
         "l_value": "0.3301936984062195",
         "bsd_rhs": "0.3302236593444805",
         "analytic_sha": "0.9999092707702395",
@@ -92,7 +92,7 @@
         "asi": "0",
         "differential_ok": "True",
         "det_ok": "True",
-        "elapsed_time": "0.0033779144287109375",
+        "elapsed_time": "0.004476308822631836",
         "l_value": "0.3301936984062195",
         "bsd_rhs": "0.3302236593444805",
         "analytic_sha": "0.9999092707702395",
@@ -113,7 +113,10 @@
         "asi": "1",
         "differential_ok": "True",
         "det_ok": "True",
-        "elapsed_time": "0.009776830673217773"
+        "elapsed_time": "0.010157108306884766",
+        "bsd_rhs": "0.3059997738340523",
+        "l_derivative": "0.3059997738340523",
+        "l_derivative_method": "bsd_reverse"
       },
       {
         "curve": "43.a1",
@@ -128,7 +131,10 @@
         "asi": "1",
         "differential_ok": "True",
         "det_ok": "True",
-        "elapsed_time": "0.004261970520019531"
+        "elapsed_time": "0.005120038986206055",
+        "bsd_rhs": "0.3435239746184781",
+        "l_derivative": "0.3435239746184781",
+        "l_derivative_method": "bsd_reverse"
       },
       {
         "curve": "53.a1",
@@ -143,7 +149,10 @@
         "asi": "1",
         "differential_ok": "True",
         "det_ok": "True",
-        "elapsed_time": "0.0048770904541015625"
+        "elapsed_time": "0.004952192306518555",
+        "bsd_rhs": "0.4358638241778571",
+        "l_derivative": "0.4358638241778571",
+        "l_derivative_method": "bsd_reverse"
       },
       {
         "curve": "57.a1",
@@ -159,7 +168,10 @@
         "asi": "1",
         "differential_ok": "True",
         "det_ok": "True",
-        "elapsed_time": "0.005174875259399414"
+        "elapsed_time": "0.005026102066040039",
+        "bsd_rhs": "0.41749163967630964",
+        "l_derivative": "0.41749163967630964",
+        "l_derivative_method": "bsd_reverse"
       },
       {
         "curve": "58.a1",
@@ -175,7 +187,10 @@
         "asi": "1",
         "differential_ok": "True",
         "det_ok": "True",
-        "elapsed_time": "0.004567146301269531"
+        "elapsed_time": "0.004359245300292969",
+        "bsd_rhs": "0.4637041647882506",
+        "l_derivative": "0.4637041647882506",
+        "l_derivative_method": "bsd_reverse"
       }
     ],
     "2": [
@@ -192,7 +207,10 @@
         "asi": "2",
         "differential_ok": "True",
         "det_ok": "True",
-        "elapsed_time": "0.004694938659667969"
+        "elapsed_time": "0.0055201053619384766",
+        "bsd_rhs": "0.7593165002884265",
+        "l_derivative": "0.3796582501442132",
+        "l_derivative_method": "bsd_reverse"
       },
       {
         "curve": "433.a1",
@@ -207,7 +225,10 @@
         "asi": "2",
         "differential_ok": "True",
         "det_ok": "True",
-        "elapsed_time": "0.004034996032714844"
+        "elapsed_time": "0.005038022994995117",
+        "bsd_rhs": "0.9470207808658149",
+        "l_derivative": "0.47351039043290744",
+        "l_derivative_method": "bsd_reverse"
       },
       {
         "curve": "446.a1",
@@ -223,7 +244,10 @@
         "asi": "2",
         "differential_ok": "True",
         "det_ok": "True",
-        "elapsed_time": "0.006033897399902344"
+        "elapsed_time": "0.006955146789550781",
+        "bsd_rhs": "0.9402826046896205",
+        "l_derivative": "0.4701413023448103",
+        "l_derivative_method": "bsd_reverse"
       },
       {
         "curve": "563.a1",
@@ -238,7 +262,10 @@
         "asi": "2",
         "differential_ok": "True",
         "det_ok": "True",
-        "elapsed_time": "0.005316972732543945"
+        "elapsed_time": "0.03284311294555664",
+        "bsd_rhs": "1.1345559170033337",
+        "l_derivative": "0.5672779585016668",
+        "l_derivative_method": "bsd_reverse"
       },
       {
         "curve": "571.a1",
@@ -253,7 +280,10 @@
         "asi": "2",
         "differential_ok": "True",
         "det_ok": "True",
-        "elapsed_time": "0.004397869110107422"
+        "elapsed_time": "0.005574941635131836",
+        "bsd_rhs": "0.9031605169716642",
+        "l_derivative": "0.4515802584858321",
+        "l_derivative_method": "bsd_reverse"
       }
     ]
   },
@@ -272,7 +302,7 @@
         "asi": "0",
         "differential_ok": "True",
         "det_ok": "True",
-        "elapsed_time": "0.00084686279296875",
+        "elapsed_time": "0.004681110382080078",
         "l_value": "0.25380438566207886",
         "bsd_rhs": "0.25384186085591065",
         "analytic_sha": "0.9998523679518208",
@@ -291,7 +321,7 @@
         "asi": "0",
         "differential_ok": "True",
         "det_ok": "True",
-        "elapsed_time": "0.0029680728912353516",
+        "elapsed_time": "0.0030841827392578125",
         "l_value": "0.25380438566207886",
         "bsd_rhs": "0.2538418608559106",
         "analytic_sha": "0.999852367951821",
@@ -310,7 +340,7 @@
         "asi": "0",
         "differential_ok": "True",
         "det_ok": "True",
-        "elapsed_time": "0.004105091094970703",
+        "elapsed_time": "0.002465963363647461",
         "l_value": "0.25380438566207886",
         "bsd_rhs": "0.2538418608559107",
         "analytic_sha": "0.9998523679518205",
@@ -330,7 +360,7 @@
         "asi": "0",
         "differential_ok": "True",
         "det_ok": "True",
-        "elapsed_time": "0.004112958908081055",
+        "elapsed_time": "0.004086971282958984",
         "l_value": "0.3301936984062195",
         "bsd_rhs": "0.3302236593444805",
         "analytic_sha": "0.9999092707702395",
@@ -353,7 +383,7 @@
         "asi": "0",
         "differential_ok": "True",
         "det_ok": "True",
-        "elapsed_time": "0.005531787872314453",
+        "elapsed_time": "0.0058062076568603516",
         "l_value": "1.1021217703819275",
         "bsd_rhs": "0.2755481325304023",
         "analytic_sha": "3.9997432037044423",
@@ -374,7 +404,7 @@
         "asi": "0",
         "differential_ok": "True",
         "det_ok": "True",
-        "elapsed_time": "0.012037277221679688",
+        "elapsed_time": "0.012378931045532227",
         "l_value": "1.4796883463859558",
         "bsd_rhs": "0.36991948194861957",
         "analytic_sha": "4.000028164484397",
@@ -395,7 +425,7 @@
         "asi": "0",
         "differential_ok": "True",
         "det_ok": "True",
-        "elapsed_time": "0.005908012390136719",
+        "elapsed_time": "0.007161140441894531",
         "l_value": "1.3877795934677124",
         "bsd_rhs": "0.34693093295656685",
         "analytic_sha": "4.0001610166063",
@@ -416,7 +446,7 @@
         "asi": "0",
         "differential_ok": "True",
         "det_ok": "True",
-        "elapsed_time": "0.005110025405883789",
+        "elapsed_time": "0.004866838455200195",
         "l_value": "1.2689855098724365",
         "bsd_rhs": "0.31737356949083323",
         "analytic_sha": "3.998396942468421",
@@ -424,9 +454,8 @@
       }
     ]
   },
-  "Tamagawa Properties": {
-    "Trivial Tamagawa": [],
-    "Non-trivial Tamagawa": [
+  "Conductor Size": {
+    "Small": [
       {
         "curve": "11.a1",
         "rank": "0",
@@ -440,7 +469,7 @@
         "asi": "0",
         "differential_ok": "True",
         "det_ok": "True",
-        "elapsed_time": "0.0008141994476318359",
+        "elapsed_time": "0.004770994186401367",
         "l_value": "0.25380438566207886",
         "bsd_rhs": "0.25384186085591065",
         "analytic_sha": "0.9998523679518208",
@@ -459,7 +488,7 @@
         "asi": "0",
         "differential_ok": "True",
         "det_ok": "True",
-        "elapsed_time": "0.0006568431854248047",
+        "elapsed_time": "0.003258943557739258",
         "l_value": "0.25380438566207886",
         "bsd_rhs": "0.2538418608559106",
         "analytic_sha": "0.999852367951821",
@@ -478,10 +507,243 @@
         "asi": "0",
         "differential_ok": "True",
         "det_ok": "True",
-        "elapsed_time": "0.0006251335144042969",
+        "elapsed_time": "0.002556324005126953",
         "l_value": "0.25380438566207886",
         "bsd_rhs": "0.2538418608559107",
         "analytic_sha": "0.9998523679518205",
+        "sha_order": "1"
+      }
+    ],
+    "Medium": [
+      {
+        "curve": "990.e3",
+        "rank": "0",
+        "period": "0.7445522779409639",
+        "regulator": 1,
+        "tamagawa_product": "48",
+        "tamagawa_factors": {
+          "2": "1",
+          "3": "2",
+          "5": "12",
+          "11": "2"
+        },
+        "torsion_order": "6",
+        "asi": "0",
+        "differential_ok": "True",
+        "det_ok": "True",
+        "elapsed_time": "0.005577802658081055",
+        "l_value": "0.9933571070432663",
+        "bsd_rhs": "0.9927363705879517",
+        "analytic_sha": "1.000625278244764",
+        "sha_order": "1"
+      },
+      {
+        "curve": "990.e4",
+        "rank": "0",
+        "period": "0.24818409264698796",
+        "regulator": 1,
+        "tamagawa_product": "16",
+        "tamagawa_factors": {
+          "2": "1",
+          "3": "2",
+          "5": "4",
+          "11": "2"
+        },
+        "torsion_order": "2",
+        "asi": "0",
+        "differential_ok": "True",
+        "det_ok": "True",
+        "elapsed_time": "0.0043752193450927734",
+        "l_value": "0.9933571070432663",
+        "bsd_rhs": "0.9927363705879518",
+        "analytic_sha": "1.0006252782447638",
+        "sha_order": "1"
+      },
+      {
+        "curve": "990.f1",
+        "rank": "0",
+        "period": "1.2550458447081936",
+        "regulator": 1,
+        "tamagawa_product": "1",
+        "tamagawa_factors": {
+          "2": "1",
+          "3": "1",
+          "5": "1",
+          "11": "1"
+        },
+        "torsion_order": "1",
+        "asi": "0",
+        "differential_ok": "True",
+        "det_ok": "True",
+        "elapsed_time": "0.0040051937103271484",
+        "l_value": "1.2549815773963928",
+        "bsd_rhs": "1.2550458447081936",
+        "analytic_sha": "0.9999487928571918",
+        "sha_order": "1"
+      }
+    ],
+    "Large": [
+      {
+        "curve": "1800.n1",
+        "rank": "1",
+        "period": "0.6230055175282171",
+        "regulator": "1.1782911821269617",
+        "tamagawa_product": "16",
+        "tamagawa_factors": {
+          "2": "1",
+          "3": "4",
+          "5": "4"
+        },
+        "torsion_order": "2",
+        "asi": "1",
+        "differential_ok": "True",
+        "det_ok": "True",
+        "elapsed_time": "0.0072629451751708984",
+        "bsd_rhs": "11.74531052351908",
+        "l_derivative": "11.74531052351908",
+        "l_derivative_method": "bsd_reverse"
+      },
+      {
+        "curve": "1800.m6",
+        "rank": "1",
+        "period": "0.4352588700034952",
+        "regulator": "3.3318606954634635",
+        "tamagawa_product": "8",
+        "tamagawa_factors": {
+          "2": "1",
+          "3": "4",
+          "5": "2"
+        },
+        "torsion_order": "2",
+        "asi": "1",
+        "differential_ok": "True",
+        "det_ok": "True",
+        "elapsed_time": "0.005380868911743164",
+        "bsd_rhs": "11.601775370531895",
+        "l_derivative": "11.601775370531895",
+        "l_derivative_method": "bsd_reverse"
+      },
+      {
+        "curve": "1800.m5",
+        "rank": "1",
+        "period": "0.8705177400069903",
+        "regulator": "1.6659303477317318",
+        "tamagawa_product": "8",
+        "tamagawa_factors": {
+          "2": "2",
+          "3": "2",
+          "5": "2"
+        },
+        "torsion_order": "2",
+        "asi": "1",
+        "differential_ok": "True",
+        "det_ok": "True",
+        "elapsed_time": "0.004733085632324219",
+        "bsd_rhs": "11.601775370531893",
+        "l_derivative": "11.601775370531893",
+        "l_derivative_method": "bsd_reverse"
+      }
+    ]
+  },
+  "Tamagawa Properties": {
+    "Trivial Tamagawa": [
+      {
+        "curve": "11.a1",
+        "rank": "0",
+        "period": "0.25384186085591065",
+        "regulator": 1,
+        "tamagawa_product": "1",
+        "tamagawa_factors": {
+          "11": "1"
+        },
+        "torsion_order": "1",
+        "asi": "0",
+        "differential_ok": "True",
+        "det_ok": "True",
+        "elapsed_time": "0.0008089542388916016",
+        "l_value": "0.25380438566207886",
+        "bsd_rhs": "0.25384186085591065",
+        "analytic_sha": "0.9998523679518208",
+        "sha_order": "1"
+      },
+      {
+        "curve": "11.a3",
+        "rank": "0",
+        "period": "6.346046521397768",
+        "regulator": 1,
+        "tamagawa_product": "1",
+        "tamagawa_factors": {
+          "11": "1"
+        },
+        "torsion_order": "5",
+        "asi": "0",
+        "differential_ok": "True",
+        "det_ok": "True",
+        "elapsed_time": "0.0006470680236816406",
+        "l_value": "0.25380438566207886",
+        "bsd_rhs": "0.2538418608559107",
+        "analytic_sha": "0.9998523679518205",
+        "sha_order": "1"
+      },
+      {
+        "curve": "15.a4",
+        "rank": "0",
+        "period": "5.6024121693304085",
+        "regulator": 1,
+        "tamagawa_product": "1",
+        "tamagawa_factors": {
+          "3": "1",
+          "5": "1"
+        },
+        "torsion_order": "4",
+        "asi": "0",
+        "differential_ok": "True",
+        "det_ok": "True",
+        "elapsed_time": "0.005316019058227539",
+        "l_value": "0.3500092029571533",
+        "bsd_rhs": "0.35015076058315053",
+        "analytic_sha": "0.9995957237797757",
+        "sha_order": "1"
+      },
+      {
+        "curve": "15.a7",
+        "rank": "0",
+        "period": "5.602412169330408",
+        "regulator": 1,
+        "tamagawa_product": "1",
+        "tamagawa_factors": {
+          "3": "1",
+          "5": "1"
+        },
+        "torsion_order": "4",
+        "asi": "0",
+        "differential_ok": "True",
+        "det_ok": "True",
+        "elapsed_time": "0.003596067428588867",
+        "l_value": "0.3500092029571533",
+        "bsd_rhs": "0.3501507605831505",
+        "analytic_sha": "0.9995957237797759",
+        "sha_order": "1"
+      }
+    ],
+    "Non-trivial Tamagawa": [
+      {
+        "curve": "11.a2",
+        "rank": "0",
+        "period": "1.2692093042795531",
+        "regulator": 1,
+        "tamagawa_product": "5",
+        "tamagawa_factors": {
+          "11": "5"
+        },
+        "torsion_order": "5",
+        "asi": "0",
+        "differential_ok": "True",
+        "det_ok": "True",
+        "elapsed_time": "0.002874135971069336",
+        "l_value": "0.25380438566207886",
+        "bsd_rhs": "0.2538418608559106",
+        "analytic_sha": "0.999852367951821",
         "sha_order": "1"
       },
       {
@@ -498,10 +760,50 @@
         "asi": "0",
         "differential_ok": "True",
         "det_ok": "True",
-        "elapsed_time": "0.0006468296051025391",
+        "elapsed_time": "0.004225015640258789",
         "l_value": "0.3301936984062195",
         "bsd_rhs": "0.3302236593444805",
         "analytic_sha": "0.9999092707702395",
+        "sha_order": "1"
+      },
+      {
+        "curve": "14.a2",
+        "rank": "0",
+        "period": "0.660447318688961",
+        "regulator": 1,
+        "tamagawa_product": "2",
+        "tamagawa_factors": {
+          "2": "2",
+          "7": "1"
+        },
+        "torsion_order": "2",
+        "asi": "0",
+        "differential_ok": "True",
+        "det_ok": "True",
+        "elapsed_time": "0.0033559799194335938",
+        "l_value": "0.3301936984062195",
+        "bsd_rhs": "0.3302236593444805",
+        "analytic_sha": "0.9999092707702395",
+        "sha_order": "1"
+      },
+      {
+        "curve": "14.a3",
+        "rank": "0",
+        "period": "1.9813419560668832",
+        "regulator": 1,
+        "tamagawa_product": "6",
+        "tamagawa_factors": {
+          "2": "1",
+          "7": "6"
+        },
+        "torsion_order": "6",
+        "asi": "0",
+        "differential_ok": "True",
+        "det_ok": "True",
+        "elapsed_time": "0.003592252731323242",
+        "l_value": "0.3301936984062195",
+        "bsd_rhs": "0.33022365934448056",
+        "analytic_sha": "0.9999092707702393",
         "sha_order": "1"
       }
     ]

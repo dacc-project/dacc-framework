@@ -7,6 +7,8 @@ import json
 import mpmath
 import sys
 
+load("dacc_utils.sage")  # Load utility functions
+
 # Helper function to convert Sage types to Python native types
 def sage_to_python(obj):
     """Convert Sage types to Python native types for JSON serialization."""
@@ -96,195 +98,11 @@ spectral_imported = import_spectral_vanishing()
 determinant_imported = import_determinant_components()
 
 if 'KnudsenMumfordConstruction' not in globals():
-    print("KnudsenMumfordConstruction class not imported, defining locally...")
-    
-    class KnudsenMumfordConstruction:
-        """Knudsen-Mumford determinant functor implementation"""
-        def __init__(self, E):
-            self.E = E
-            
-        def compute_determinant_line(self, complex):
-            """Compute the determinant line of a complex."""
-            E = self.E
-            rank = E.rank()
-            
-            # Compute the actual determinant line factors
-            det_factors = []
-            
-            # For positive rank, H^0 is trivial and H^1 has dimension = rank
-            if rank > 0:
-                det_factors.append(f"det(H^1(C))^1")
-            else:
-                det_factors.append(f"det(H^0(C))^1")
+    raise ImportError("Required class 'KnudsenMumfordConstruction' not available. Cannot proceed with analysis.")
                 
-            # Assemble the determinant formula
-            det_formula = " ⊗ ".join(det_factors) if det_factors else "1"
-            
-            # Calculate the key arithmetic invariants
-            period = E.period_lattice().omega().real()
-            
-            if rank > 0:
-                try:
-                    height_matrix = E.height_pairing_matrix(E.gens())
-                    regulator = height_matrix.determinant()
-                except Exception as e:
-                    regulator = f"R_E (symbolic, could not compute explicitly)"
-            else:
-                regulator = 1
-                
-            # Calculate Tamagawa products and factors
-            tamagawa_product = 1
-            tamagawa_factors = []
-            for p in E.conductor().prime_factors():
-                cp = E.tamagawa_number(p)
-                tamagawa_product *= cp
-                tamagawa_factors.append(f"c_{p}={cp}")
-                
-            # Construct the detailed output
-            determinant_analysis = f"""
-        DETERMINANT LINE CONSTRUCTION:
-
-        For the complex C• representing the derived adelic complex of {E}:
-
-        1. det(C) = {det_formula}
-
-        2. This yields a canonical line bundle that encodes:
-            - The period Ω_E = {period:.10f} through the archimedean component
-            - The regulator R_E = {regulator} through the global component
-            - The Tamagawa numbers ∏c_p = {tamagawa_product} through the local components
-              ({', '.join(tamagawa_factors)})
-            - The order of Sha through global-to-local obstructions
-        
-        3. Theoretical foundation:
-            - The Knudsen-Mumford determinant functor Det: D^b(Vect) → Pic(k)
-            - For a complex C•, Det(C•) = ⊗_{{i even}} Det(C^i) ⊗ ⊗_{{i odd}} Det(C^i)^{{-1}}
-            - This construction is functorial and respects quasi-isomorphisms
-            - In the DACC framework, it translates the spectral sequence data to the BSD formula
-        """
-            
-            return determinant_analysis
-        
-        def compute_determinant_of_morphism(self, rank):
-            """Compute the determinant of the morphism d_r."""
-            E = self.E
-            
-            if rank == 0:
-                # For rank 0, compute L(E,1) and compare with BSD formula
-                try:
-                    l_value_raw = E.lseries().at1()
-                    if isinstance(l_value_raw, tuple):
-                        l_value = float(l_value_raw[0])
-                    elif hasattr(l_value_raw, 'real'):
-                        l_value = float(l_value_raw.real())
-                    else:
-                        l_value = float(l_value_raw)
-                        
-                    period = E.period_lattice().omega().real()
-                    tamagawa_product = 1
-                    for p in E.conductor().prime_factors():
-                        tamagawa_product *= E.tamagawa_number(p)
-                    torsion_order = E.torsion_order()
-                    
-                    bsd_rhs = (period * tamagawa_product) / (torsion_order**2)
-                    ratio = l_value / bsd_rhs
-                    sha_order = round(ratio)
-                    
-                    return {
-                        "l_value": l_value,
-                        "period": period,
-                        "tamagawa_product": tamagawa_product,
-                        "torsion_order": torsion_order,
-                        "bsd_rhs": bsd_rhs,
-                        "sha_ratio": ratio,
-                        "sha_order": sha_order,
-                        "summary": f"""
-                FOR RANK 0 CURVE {E}:
-                
-                No differential needed in the spectral sequence.
-                
-                Instead, we directly compare L(E,1) with the BSD formula:
-                
-                L(E,1) = {l_value:.10f}
-                Ω_E = {period:.10f}
-                ∏c_p = {tamagawa_product}
-                #E(Q)_tors = {torsion_order}
-                
-                BSD formula without Sha: (Ω_E·∏c_p)/(#E(Q)_tors)^2 = {bsd_rhs:.10f}
-                
-                Ratio: L(E,1) / [(Ω_E·∏c_p)/(#E(Q)_tors)^2] = {ratio:.10f}
-                
-                This indicates #Sha(E) = {sha_order}
-                
-                CONCLUSION:
-                - The BSD formula holds: L(E,1) = (Ω_E·∏c_p)/((#E(Q)_tors)^2·#Sha(E))
-                - This validates the DACC framework for rank 0 curves
-                """
-                    }
-                except Exception as e:
-                    return {"summary": f"For rank 0, no differential needed. Could not compute L-value comparison: {e}"}
-                
-            # For rank > 0, compute the height pairing determinant
-            try:
-                # Add implementation for rank > 0
-                # [Simplified version for brevity]
-                period = E.period_lattice().omega().real()
-                generators = E.gens()
-                height_matrix = E.height_pairing_matrix(generators)
-                regulator = height_matrix.determinant()
-                
-                return {
-                    "summary": f"""
-        DETERMINANT OF d_{rank} - RIGOROUS DERIVATION FOR CURVE {E}:
-        
-        1. By the Knudsen-Mumford functor applied to d_{rank}: E_{rank}^{{0,0}} → E_{rank}^{{{rank},1-{rank}}}
-        
-        2. The derived sheaf D_∞ contributes the period Ω_E = {period:.10f} via:
-           - H^1(E(R), D_∞) ≅ R/Ω_E Z
-           - This emerges in the archimedean component of the determinant
-        
-        3. The regulator R_E = {regulator} emerges from:
-           - The height pairing on E(Q)
-           - Height pairing matrix:
-           - Corresponds to the volume of E(Q)/torsion in the height norm
-            
-        RESULTING FORMULA: det(d_{rank}) = (Ω_E·R_E·∏c_p)/#Sha(E)
-        """
-                }
-            except Exception as e:
-                return {"summary": f"Could not compute determinant: {e}"}
-            
 if 'BSDFormulaDerivation' not in globals():
-    print("BSDFormulaDerivation class not imported, defining locally...")
+    raise ImportError("Required class 'BSDFormulaDerivation' not available. Cannot proceed with analysis.")
     
-    class BSDFormulaDerivation:
-        """Rigorous derivation of the BSD formula from the DACC framework."""
-        def __init__(self, E):
-            self.E = E
-            
-        def derive_full_bsd_formula(self):
-            """Derive the full BSD formula from the DACC spectral sequence."""
-            # Basic implementation
-            E = self.E
-            rank = E.rank()
-            
-            return f"""
-        COMPLETE DERIVATION OF BSD FORMULA FROM DACC FOR CURVE {E}:
-        
-        1. SPECTRAL SEQUENCE STRUCTURE:
-           - The spectral sequence from Postnikov filtration on the adelic complex C•(E)
-           - First non-zero differential at page r = {rank} (the ASI)
-           - This proves ASI(E) = {rank} = rank(E) = ords=1L(s, E)
-        
-        2. DETERMINANT FORMULA:
-           - DERIVED FORMULA: L^({rank})(E,1)/{rank}! = (Ω_E·R_E·∏c_p)/#Sha(E)
-        
-        CONCLUSION: 
-        1. ASI(E) = {rank} = rank(E) = ords=1L(s, E)
-        2. L^({rank})(E,1)/{rank}! = (Ω_E·R_E·∏c_p)/#Sha(E)
-        
-        This proves the complete BSD conjecture via the DACC framework.
-        """
-
 def analyze_curve_with_comprehensive_proof(curve_label):
     """Comprehensive DACC proof for a given curve."""
     print(f"COMPREHENSIVE DACC PROOF DEVELOPMENT FOR CURVE {curve_label}")
@@ -292,8 +110,12 @@ def analyze_curve_with_comprehensive_proof(curve_label):
     
     start_time = time.time()
     
-    # Load the elliptic curve
-    E = EllipticCurve(curve_label)
+    # Load the elliptic curve properly from LMFDB
+    E, valid_label, curve_data = get_curve_from_lmfdb(curve_label)
+    
+    if E is None:
+        print("Comprehensive proof development cannot continue without valid LMFDB data.")
+        return
     
     # Print basic information
     print(f"Curve equation: {E}")
@@ -416,10 +238,14 @@ def analyze_all_lmfdb_curves():
         analyze_default_curves()
 
 def analyze_default_curves():
-    """Analyze default set of curves if no previous results available"""
-    # Default set of curves to analyze (one per rank)
-    curves = ["11a1", "37a1", "389a1", "5077a1", "234446a1"]
-    
+    """Analyze default set of curves from configuration"""
+    # Get one curve from each rank 0-4
+    curves = []
+    for rank in range(5):
+        rank_curves = get_test_curves_by_rank(rank, limit=1)
+        if rank_curves:
+            curves.extend(rank_curves)
+            
     print(f"Running comprehensive proof for default set of curves: {', '.join(curves)}")
     
     for curve in curves:

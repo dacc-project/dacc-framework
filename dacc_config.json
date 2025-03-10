@@ -1,0 +1,56 @@
+{
+    "test_curves": {
+        "by_rank": {
+            "0": ["11.a1", "43.a1", "571.a1", "681.b1"],
+            "1": ["37.a1", "91.b1", "389.a3", "1154.a1"],
+            "2": ["389.a1", "433.a1", "446.d1", "1058.d1"],
+            "3": ["5077.a1", "681.c1", "5252.a1", "19.a3"],
+            "4": ["234446.a1", "61.a1"],
+            "5": ["177858971.a1"]
+        },
+        "special_properties": {
+            "non_trivial_sha": ["571.a1", "681.b1", "853.b1"],
+            "trivial_sha": ["11.a1", "37.a1", "389.a1", "5077.a1"],
+            "small_conductor": ["11.a1", "37.a1", "43.a1"],
+            "medium_conductor": ["389.a1", "433.a1", "571.a1"],
+            "large_conductor": ["5077.a1", "234446.a1"],
+            "trivial_tamagawa": ["37.a1", "389.a1"],
+            "non_trivial_tamagawa": ["11.a1", "91.b1"]
+        },
+        "test_families": {
+            "Rank Classification": {
+                "0": ["11.a1", "43.a1", "571.a1", "681.b1"],
+                "1": ["37.a1", "91.b1", "389.a3", "1154.a1"],
+                "2": ["389.a1", "433.a1", "446.d1", "1058.d1"],
+                "3": ["5077.a1", "681.c1", "5252.a1", "19.a3"],
+                "4": ["234446.a1", "61.a1"]
+            },
+            "Sha Properties": {
+                "Trivial Sha": ["11.a1", "37.a1", "389.a1", "5077.a1"],
+                "Non-trivial Sha": ["571.a1", "681.b1"]
+            },
+            "Conductor Size": {
+                "Small": ["11.a1", "37.a1", "43.a1"],
+                "Medium": ["389.a1", "433.a1", "571.a1"],
+                "Large": ["5077.a1", "234446.a1"]
+            },
+            "Tamagawa Properties": {
+                "Trivial Tamagawa": ["37.a1", "389.a1"],
+                "Non-trivial Tamagawa": ["11.a1", "91.b1"]
+            }
+        },
+        "default_examples": {
+            "sha_examples": [
+                {"curve": "11.a1", "l_value": 0.254, "bsd_prediction": 0.254, "analytic_sha": 1},
+                {"curve": "571.a1", "l_value": 1.729, "bsd_prediction": 0.432, "analytic_sha": 4},
+                {"curve": "681.b1", "l_value": 1.844, "bsd_prediction": 0.205, "analytic_sha": 9}
+            ],
+            "rank_examples": {
+                "1": [{"curve": "37.a1", "regulator": 0.051}],
+                "2": [{"curve": "389.a1", "regulator": 0.152}],
+                "3": [{"curve": "5077.a1", "regulator": 0.417}],
+                "4": [{"curve": "234446.a1", "regulator": 1.504}]
+            }
+        }
+    }
+}

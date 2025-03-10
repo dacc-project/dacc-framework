@@ -70,6 +70,8 @@ import csv
 import mpmath
 from sage.all import EllipticCurve, prod, RR
 
+load("dacc_utils.sage")  # Load utility functions
+
 # Base URL for your local LMFDB API
 BASE_URL = "http://127.0.0.1:37777/api"
 
@@ -161,7 +163,7 @@ def get_all_curves(max_curves=None, batch_size=100):
     return all_curves
 
 def lmfdb_to_sage(curve_data):
-    """Convert LMFDB curve data to Sage EllipticCurve and get label"""
+    """Safely convert LMFDB curve data to Sage EllipticCurve."""
     # Extract label
     label = curve_data.get('lmfdb_label')
     if not label:
@@ -171,21 +173,31 @@ def lmfdb_to_sage(curve_data):
                 label = curve_data[field]
                 break
             
-    # Extract ainvs
+    # Validate label
+    if not is_valid_lmfdb_label(label):
+        print(f"WARNING: Potentially invalid LMFDB label format: '{label}'")
+        suggestion = format_suggested_label(label)
+        if suggestion:
+            print(f"Suggested format: '{suggestion}'")
+            
+    # Extract ainvs (always use the LMFDB data, never fallback)
     ainvs = curve_data.get('ainvs')
     
-    # ainvs is already a list in the JSON
     if not isinstance(ainvs, list):
-        # If somehow it's a string, parse it
         if isinstance(ainvs, str):
-            ainvs = [int(a) for a in ainvs.replace('[', '').replace(']', '').split(',')]
+            try:
+                ainvs = [int(a) for a in ainvs.replace('[', '').replace(']', '').split(',')]
+            except Exception as e:
+                raise ValueError(f"Could not parse ainvs string: {e}")
+        else:
+            raise ValueError(f"Invalid ainvs format: {ainvs}")
             
     try:
         E = EllipticCurve(ainvs)
         return E, label
     except Exception as e:
         raise ValueError(f"Could not create elliptic curve from ainvs {ainvs}: {e}")
-        
+
 def analyze_all_curves(curves_data):
     """Test all curves from the LMFDB database."""
     
@@ -208,6 +220,11 @@ def analyze_all_curves(curves_data):
                 
             E, label = lmfdb_to_sage(curve_data)
             rank = E.rank()
+            
+            # Verify label format
+            if not is_valid_lmfdb_label(label):
+                print(f"WARNING: Skipping curve with invalid label format: '{label}'")
+                continue            
             
             if rank not in curves_by_rank:
                 curves_by_rank[rank] = []

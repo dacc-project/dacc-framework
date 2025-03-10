@@ -27,6 +27,8 @@ import sys
 import json
 import os
 
+load("dacc_utils.sage")  # Load utility functions
+
 class KnudsenMumfordConstruction:
     """
     Rigorous implementation of the Knudsen-Mumford determinant functor.
@@ -92,7 +94,7 @@ class KnudsenMumfordConstruction:
             - The Tamagawa numbers ∏c_p = {tamagawa_product} through the local components
               ({', '.join(tamagawa_factors)})
             - The order of Sha through global-to-local obstructions
-        
+        """+ f"""
         3. Theoretical foundation:
             - The Knudsen-Mumford determinant functor Det: D^b(Vect) → Pic(k)
             - For a complex C•, Det(C•) = ⊗_{{i even}} Det(C^i) ⊗ ⊗_{{i odd}} Det(C^i)^{{-1}}
@@ -147,27 +149,25 @@ class KnudsenMumfordConstruction:
                     "sha_order": sha_order,
                     "error": error,
                     "summary": f"""
-                FOR RANK 0 CURVE {E}:
+            FOR RANK 0 CURVE {E}:
                 
-                No differential needed in the spectral sequence.
+            - No differential needed in the spectral sequence.
                 
-                Instead, we directly compare L(E,1) with the BSD formula:
+            Instead, we directly compare L(E,1) with the BSD formula:
                 
                 L(E,1) = {l_value:.10f}
                 Ω_E = {period:.10f}
                 ∏c_p = {tamagawa_product}
                 #E(Q)_tors = {torsion_order}
                 
-                BSD formula without Sha: (Ω_E·∏c_p)/(#E(Q)_tors)^2 = {bsd_rhs:.10f}
+            - BSD formula without Sha: (Ω_E·∏c_p)/(#E(Q)_tors)^2 = {bsd_rhs:.10f}
+            - Ratio: L(E,1) / [(Ω_E·∏c_p)/(#E(Q)_tors)^2] = {ratio:.10f}
+            - This indicates #Sha(E) = {sha_order}
                 
-                Ratio: L(E,1) / [(Ω_E·∏c_p)/(#E(Q)_tors)^2] = {ratio:.10f}
-                
-                This indicates #Sha(E) = {sha_order}
-                
-                CONCLUSION:
-                - The BSD formula holds: L(E,1) = (Ω_E·∏c_p)/((#E(Q)_tors)^2·#Sha(E))
-                - This validates the DACC framework for rank 0 curves
-                """
+            CONCLUSION:
+            - The BSD formula holds: L(E,1) = (Ω_E·∏c_p)/((#E(Q)_tors)^2·#Sha(E))
+            - This validates the DACC framework for rank 0 curves
+            """
                 }
             except Exception as e:
                 return {
@@ -214,13 +214,13 @@ class KnudsenMumfordConstruction:
         
         3. The regulator R_E = {regulator} emerges from:
            - The height pairing on E(Q)
-           - Height pairing matrix:\n{height_matrix}\n\nDeterminant = {regulator}
+           - Height pairing matrix:\n\n{height_matrix}\n\n\t   Determinant = {regulator}
            - Corresponds to the volume of E(Q)/torsion in the height norm
         
         4. The Tamagawa product ∏c_p = {tamagawa_product} comes from:
            - Each local derived sheaf D_p contributes c_p to the determinant
            - Explicitly: {" × ".join(tamagawa_factors)}
-        
+        """+ f"""
         5. The Tate-Shafarevich group #Sha(E) appears as:
            - An obstruction in the global-to-local map
            - The cokernel of a specific connecting homomorphism
@@ -296,9 +296,7 @@ class BSDFormulaDerivation:
            - First non-zero differential at page r = {rank} (the ASI)
            - This proves ASI(E) = {rank} = rank(E) = ords=1L(s, E)
         
-        2. DETERMINANT FORMULA:
-        """
-        
+        2. DETERMINANT FORMULA:"""
         if rank == 0:
             # Rank 0 case
             try:
@@ -327,7 +325,7 @@ class BSDFormulaDerivation:
            - For rank 0: L(E,1) directly equals the BSD formula
            - DERIVED FORMULA: L(E,1) = (Ω_E·∏c_p)/((#E(Q)_tors)^2·#Sha(E))
            - Note: Could not compute L-value for verification: {e}
-                """
+           """
         else:
             # Higher rank case
             try:
@@ -422,8 +420,12 @@ def analyze_determinant_for_all_curves():
             for curve_label in test_curves:
                 print(f"\nTesting determinant theory with curve {curve_label}")
                 
-                # Load the elliptic curve
-                E = EllipticCurve(curve_label)
+                # Load the elliptic curve properly
+                E, valid_label, curve_data = get_curve_from_lmfdb(curve_label)
+                
+                if E is None:
+                    print(f"Skipping analysis of {curve_label} due to LMFDB loading failure")
+                    continue
                 
                 # Test the KnudsenMumford construction
                 km = KnudsenMumfordConstruction(E)
@@ -452,12 +454,18 @@ def analyze_determinant_for_all_curves():
         test_with_default_curve()
         
 def test_with_default_curve():
-    """Test with a default curve as fallback"""
-    curve_label = "11a1"
+    """Test with a default curve from configuration"""
+    config = load_dacc_config()
+    # Get the first rank 0 curve
+    curve_label = get_test_curves_by_rank(0, limit=1)[0]
     print(f"Testing determinant theory with curve {curve_label}")
     
-    # Load the elliptic curve
-    E = EllipticCurve(curve_label)
+    # Load the elliptic curve properly
+    E, valid_label, curve_data = get_curve_from_lmfdb(curve_label)
+    
+    if E is None:
+        print(f"Could not load curve {curve_label}")
+        return
     
     # Test the KnudsenMumford construction
     km = KnudsenMumfordConstruction(E)

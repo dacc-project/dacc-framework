@@ -260,7 +260,7 @@ class ExteriorPowerTechniques:
     matrix_repr = f"Could not compute height matrix: {diff_r.get('error', 'unknown error')}"
     
     if height_matrix is not None:
-      matrix_repr = f"Height pairing matrix:\n{height_matrix}\n\nDeterminant = {height_matrix.determinant()}"
+      matrix_repr = f"Height pairing matrix:\n\n{height_matrix}\n\n\tDeterminant = {height_matrix.determinant()}"
       
     return f"""
     PROPERTIES OF FIRST NON-ZERO DIFFERENTIAL d_{rank} FOR CURVE {E}:
