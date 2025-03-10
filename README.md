@@ -9,14 +9,15 @@ The **DACC framework** offers a twofold interpretation of the BSD conjecture:
 1. **Rank Equality:**
    The order of vanishing of the L-function equals the elliptic curve's rank:
    ```math
-   $\text{ASI}(E) = \text{rank}(E) = \text{ord}_{s=1}L(s, E)$
+   \text{ASI}(E) = \text{rank}(E) = \text{ord}_{s=1}L(s, E)
    ```
   
 2. **Leading Coefficient Formula:**
    The leading coefficient of the L-series is given by:
     ```math
-    $\frac{L^{(r)}(E,1)}{r!} = \frac{\Omega_E \cdot R_E \cdot \prod_{p} c_p}{\text{\#Sha}(E)}$
+    \frac{L^{(r)}(E,1)}{r!} = \frac{\Omega_E \cdot R_E \cdot \prod_{p} c_p}{\text{\#Sha}(E)}
     ```
+    
 The method constructs a derived sheaf by combining local arithmetic data from each place of \(\mathbb{Q}\). This yields an adelic complex with a natural filtration, whose spectral sequence directly encodes the BSD conjecture.
 
 ## Key Features
