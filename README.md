@@ -7,10 +7,10 @@ This repository contains the implementation of the Derived Adelic Cohomology Con
 The DACC framework provides a cohomological interpretation that explains both aspects of the BSD conjecture:
 
 1. The equality between the order of vanishing of the L-function and the rank: 
-   $\text{ASI}(E) = \text{rank}(E) = \text{ord}_{s=1}L(s, E)$
+   ```math\text{ASI}(E) = \text{rank}(E) = \text{ord}_{s=1}L(s, E)```
 
 2. The precise formula for the leading coefficient: 
-   $\frac{L^{(r)}(E,1)}{r!} = \frac{\Omega_E \cdot R_E \cdot \prod_{p} c_p}{\#\text{Sha}(E)}$
+   ```math\frac{L^{(r)}(E,1)}{r!} = \frac{\Omega_E \cdot R_E \cdot \prod_{p} c_p}{\#\text{Sha}(E)}```
 
 Our approach constructs a derived sheaf by gluing local arithmetic data at each place of $\mathbb{Q}$. The resulting adelic complex, equipped with a natural filtration, gives rise to a spectral sequence whose behavior directly encodes the BSD conjecture.
 
