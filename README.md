@@ -20,7 +20,7 @@ The **DACC framework** offers a twofold interpretation of the BSD conjecture:
     
 The method constructs a derived sheaf by combining local arithmetic data from each place of $\(\mathbb{Q}\)$. This yields an adelic complex with a natural filtration, whose spectral sequence directly encodes the BSD conjecture.
 
-→ [Read entire the paper on arXiv here](https://arxiv.org/pdf/2503.05614O) ←
+→ [Read entire the paper on arXiv here][1] ←
 
 ## Key Features
 
@@ -127,4 +127,6 @@ If you use the DACC framework in your research, please cite:
 ## License
 
 This project is licensed under the MIT License – see the [LICENSE](LICENSE) file for details.
+
+[1]: https://arxiv.org/pdf/2503.05614
 
