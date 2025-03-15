@@ -20,6 +20,8 @@ The **DACC framework** offers a twofold interpretation of the BSD conjecture:
     
 The method constructs a derived sheaf by combining local arithmetic data from each place of $\(\mathbb{Q}\)$. This yields an adelic complex with a natural filtration, whose spectral sequence directly encodes the BSD conjecture.
 
+→ [Read entire the paper on arXiv here](https://arxiv.org/pdf/2503.05614O) ←
+
 ## Key Features
 
 - **Unified Framework:** Simultaneously explains both the rank equality and the special value formula.
